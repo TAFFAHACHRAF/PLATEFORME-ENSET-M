@@ -1,0 +1,47 @@
+ if ( $data->MODULE_LIBELLE == $module) { 
+                                    
+                                    if( $i <= 2 ) {
+                                            if( $i == 1 ) $note1 = $data->note ;
+                                              else $note2 = $data->note;
+                                    ?>
+                                  <tr>
+                                        <?php
+                                           if ( $i==2 ) echo " <td rowspan=\"3\" class=\"text-center\" style=\"vertical-align : middle\">
+                                                <?= $data->MODULE_LIBELLE ?>
+                                                </td>
+                                           ";
+                                        ?>
+                                                <td><?= $data->ELEMENT_LIBELLE ?></td>
+                                                <td>-</td>
+                                                <td><?= $data->note ?></td>
+                                                <td><?= $data->note ?></td>
+                                                <td>1</td>
+                                                <td><?= $data->note ?></td>
+                                </tr>
+
+                              <?php 
+                           $i= 0;      
+                        }
+                              }   else { 
+                                 $i++;
+                                  if ( $i <= 2 ) { 
+                                         if( $i == 1 ) $note1 = $data->note ;
+                                             else $note2 = $data->note;
+                                 ?>
+                                         <tr>
+                                         <td rowspan="3" class="text-center" style="vertical-align : middle">
+                                                 <?= $data->MODULE_LIBELLE ?>
+                                                 </td>
+                                                 <td><?= $data->ELEMENT_LIBELLE ?></td>
+                                                 <td>-</td>
+                                                 <td><?= $data->note ?></td>
+                                                 <td><?= $data->note ?></td>
+                                                 <td>1</td>
+                                                 <td><?= $data->note ?></td>
+                                         </tr>
+                                  <?php } else {
+                                          $i = 0;
+                                  }
+                               ?>
+
+                      <?php }
